@@ -1,0 +1,478 @@
+:root {
+  --primary: #f2ff39;
+  --bg: #010101;
+}
+
+* {
+  font-family: "poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+/* Navbar Start */
+.navigasi {
+  background-color: rgb(1, 1, 1, 0.8);
+  border-bottom: 1px solid #513c28;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.navbar-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Jarak antara logo dan teks */
+}
+
+.navbar-logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 5px; /* Logo bulat */
+}
+
+.navbar-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-logo span {
+  color: #ffd700;
+}
+
+.navbar-subtitle {
+  font-size: 14px;
+  color: #fff;
+  margin-top: -5px;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav.active {
+  display: block;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: #004d40;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+.navbar-link:hover {
+  background-color: var(--primary);
+  color: #000;
+  border-radius: 4px;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger-menu .menu-icon {
+  width: 20px;
+  height: 5px;
+  background-color: #fff;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu .menu-icon::before,
+.hamburger-menu .menu-icon::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 5px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu .menu-icon::before {
+  top: -8px; /* Baris atas */
+  right: 90%;
+}
+
+.hamburger-menu .menu-icon::after {
+  top: 8px; /* Baris bawah */
+  right: 90%;
+}
+
+/* Active Hamburger Animation */
+.hamburger-menu.active .menu-icon {
+  background-color: transparent;
+}
+
+.hamburger-menu.active .menu-icon::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active .menu-icon::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+/* Navbar End */
+/* hero section */
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgb(19, 19, 18);
+  line-height: 1;
+}
+
+.hero .content h1 span {
+  color: #ffd700;
+  text-shadow: 1px 1px 3px rgb(19, 19, 18);
+}
+
+.hero h1 {
+  color: white; /* Warna teks H1 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Bayangan teks */
+}
+
+.hero h3 {
+  font-size: 15px;
+  margin-top: 30px;
+  color: #f0f0f0; /* Warna teks H3 */
+  text-shadow: 1px 1px 3px rgb(3, 10, 2); /* Bayangan teks */
+}
+
+.hero {
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 1rem;
+  line-height: 1.4rem;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8); /* Ganti warna shadow menjadi lebih terang */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Menambahkan shadow yang lebih jelas */
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: black;
+  font-weight: 700;
+  background-color: #ffd700;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5%);
+}
+/* about section */
+.about,
+.menu,
+.contact,
+.features {
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2,
+.menu h2,
+.contact h2,
+.features h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 {
+  color: #ffd700;
+}
+
+.about h2 span {
+  color: #fff;
+}
+
+.menu h2 span,
+.contact h2 span,
+.features h2 span {
+  color: var(--primary);
+}
+
+.about .row {
+  display: flex; /* Menggunakan flexbox untuk menyelaraskan elemen secara horizontal */
+  align-items: flex-start; /* Menyelaraskan elemen di bagian atas */
+  justify-content: center; /* Menyelaraskan konten di tengah secara horizontal */
+}
+
+.about-img {
+  margin: 20px 10px; /* Menambahkan jarak di atas dan bawah gambar */
+}
+
+.content {
+  margin-top: 20px; /* Menambahkan jarak di atas konten */
+}
+
+.about h2 {
+  margin-bottom: 35px; /* Menambahkan jarak di bawah judul */
+}
+
+.description {
+  font-size: 1.4rem;
+  font-family: "Poppins", sans-serif;
+  text-align: justify;
+  color: #a9a9a9; /* Mengubah warna teks agar kontras dengan background */
+  padding: 10px; /* Menambahkan padding untuk estetika */
+  border-radius: 5px; /* Menambahkan border-radius jika diinginkan */
+}
+
+.about .row .about-img {
+  flex: 1 1 10rem;
+  opacity: 0.8;
+}
+
+.about .row .content {
+  flex: 1 1 45rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+/*menu*/
+.menu {
+  padding: 20px; /* Add padding around the menu section */
+  background-color: #000; /* Black background */
+}
+
+.menu h2 {
+  padding: 20px;
+  text-align: center; /* Center the heading */
+  margin-bottom: 40px; /* Space below the heading */
+  color: #ffd700; /* White text for contrast */
+}
+
+.menu h2 span {
+  color: #fff;
+}
+
+.menu p {
+  text-align: center; /* Center the introductory text */
+  margin-bottom: 30px; /* Space below the introductory text */
+  color: #fff; /* White text for contrast */
+}
+
+.row {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: center; /* Center items */
+}
+
+.menu-card {
+  background-color: gray; /* White background for cards */
+  border: 1px solid #ddd; /* Light border around cards */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Inner padding */
+  margin: 15px; /* Space between cards */
+  width: 300px; /* Fixed width for cards */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center; /* Center text inside cards */
+}
+
+.menu-card-img {
+  max-width: 100%; /* Responsive image */
+  border-radius: 8px; /* Rounded corners for images */
+}
+
+.menu-card-title {
+  font-size: 18px; /* Title font size */
+  margin: 10px 0; /* Space around title */
+  color: #000; /* Black text for title */
+}
+
+.menu-card .price {
+  margin: 5px 0; /* Space between price and description */
+  font-weight: bold; /* Bold price */
+}
+
+.menu-card p:not(.price) {
+  margin: 10px 0; /* Space for description */
+}
+
+.menu-card .cta {
+  display: inline-block; /* Button style */
+  margin-top: 10px; /* Space above button */
+  padding: 10px 15px; /* Padding for button */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded button corners */
+  transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+.menu-card .cta:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  color: var(--primary);
+}
+/* media queries */
+
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .about .row .content p {
+    font-size: 1.5rem;
+  }
+
+  .menu p {
+    font-size: 1.2rem;
+  }
+
+  .contact .row .map {
+    height: 30rem;
+  }
+
+  .contact .row form {
+    padding: 0;
+  }
+}
+
+/* hp */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
